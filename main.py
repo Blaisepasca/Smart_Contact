@@ -35,9 +35,27 @@ def afficher_contacts():
     fenetre_contacts = tk.Toplevel(root)
     fenetre_contacts.title("Liste des contacts")
 
-    
+
     with open(FICHIER, mode='r', encoding='utf-8') as file:
         reader = csv.reader(file)
         for i, row in enumerate(reader):
             tk.Label(fenetre_contacts, text=" | ".join(row)).grid(row=i, column=0, sticky='w')
+
+
+# Effacer les champs du formulaire
+def effacer_champs():
+    name_var.set("")
+    phone_var.set("")
+    email_var.set("")
+    gender_var.set("")
+
+# Fenêtre principale
+root = tk.Tk()
+root.title("Gestionnaire de Contacts")
+
+# Variables
+name_var = tk.StringVar()
+phone_var = tk.StringVar()
+email_var = tk.StringVar()
+gender_var = tk.StringVar()
 
