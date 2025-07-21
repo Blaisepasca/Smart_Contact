@@ -25,3 +25,12 @@ def enregistrer_contact():
     
     messagebox.showinfo("Succès", "Contact enregistré avec succès !")
     effacer_champs()
+
+    # Fonction pour afficher les contacts
+def afficher_contacts():
+    if not os.path.exists(FICHIER):
+        messagebox.showinfo("Info", "Aucun contact enregistré.")
+        return
+
+    fenetre_contacts = tk.Toplevel(root)
+    fenetre_contacts.title("Liste des contacts")
