@@ -59,3 +59,21 @@ phone_var = tk.StringVar()
 email_var = tk.StringVar()
 gender_var = tk.StringVar()
 
+
+# Interface utilisateur
+tk.Label(root, text="Nom").grid(row=0, column=0, padx=10, pady=5, sticky='w')
+tk.Entry(root, textvariable=name_var).grid(row=0, column=1, padx=10, pady=5)
+
+tk.Label(root, text="Téléphone").grid(row=1, column=0, padx=10, pady=5, sticky='w')
+tk.Entry(root, textvariable=phone_var).grid(row=1, column=1, padx=10, pady=5)
+
+tk.Label(root, text="Email").grid(row=2, column=0, padx=10, pady=5, sticky='w')
+tk.Entry(root, textvariable=email_var).grid(row=2, column=1, padx=10, pady=5)
+
+tk.Label(root, text="Genre").grid(row=3, column=0, padx=10, pady=5, sticky='w')
+tk.Entry(root, textvariable=gender_var).grid(row=3, column=1, padx=10, pady=5)
+
+tk.Button(root, text="Enregistrer", command=enregistrer_contact).grid(row=4, column=0, pady=10)
+tk.Button(root, text="Afficher les contacts", command=afficher_contacts).grid(row=4, column=1, pady=10)
+
+root.mainloop()
