@@ -34,3 +34,10 @@ def afficher_contacts():
 
     fenetre_contacts = tk.Toplevel(root)
     fenetre_contacts.title("Liste des contacts")
+
+    
+    with open(FICHIER, mode='r', encoding='utf-8') as file:
+        reader = csv.reader(file)
+        for i, row in enumerate(reader):
+            tk.Label(fenetre_contacts, text=" | ".join(row)).grid(row=i, column=0, sticky='w')
+
